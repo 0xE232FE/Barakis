@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Injected</title>
+</head>
+<body>
+<script>
+    document.getElementById('eventboxLoading').innerText = "{{ fleet }}"
+    a = document.createElement('a')
+    a.innerText = "Barakis"
+    a.setAttribute('class', 'menubutton')
+    a.setAttribute('style', 'color: red;')
+    a.setAttribute('href', '/')
+    li = document.createElement('li')
+    li.appendChild(a)
+    document.getElementById('menuTable').appendChild(li)
+</script>
+</body>
+</html>
