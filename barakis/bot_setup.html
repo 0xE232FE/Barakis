@@ -1,0 +1,59 @@
+<div id="middle">
+    <div id="preferencescomponent" class="maincontent">
+        <div id="preferences">
+            <div id="inhalt">
+                <div id="planet">
+                    <h2>Barakis</h2>
+                </div>
+                <div class="c-left"></div>
+                <div class="c-right"></div>
+
+        <div id="content" style="color:#fff;">
+            <div class="sectioncontent">
+                <div class="contentzs ui-tabs ui-widget ui-widget-content ui-corner-all" id="preferencesTabs">
+                    <div class="tabwrapper">
+                        <ul class="tabsbelow ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" id="tabs-pref" role="tablist">
+                            <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="one" aria-labelledby="tabUserdata" aria-selected="true" aria-expanded="true">
+                                <a href="#one" id="tabUserdata" class="ui-tabs-anchor" role="presentation" tabindex="-1">
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form autocomplete="off" method="post" name="prefs" id="prefs" class="formValidation" action="http://127.0.0.1:5000/bot_settings">
+                        <div class="content">
+
+                            <div id="one" class="wrap ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="tabUserdata" role="tabpanel" aria-hidden="false">
+                                <div class="group bborder" style="display: block;">
+                                    <div class="fieldwrapper">
+                                        <label class="styled textBeefy">Turn On Bot</label>
+                                            <div class="thefield">
+                                                <input type="checkbox" value="" name="active" {{ active }}>
+                                            </div>
+                                    </div>
+                                    <div class="fieldwrapper">
+                                        <label class="styled textBeefy">Automated expeditions</label>
+                                            <div class="thefield">
+                                                <input  type="checkbox" value="" name="expedition" {{ expedition }}>
+                                            </div>
+                                    </div>
+                                    <div class="fieldwrapper">
+                                        <label class="styled textBeefy">Automated Attacks to inactives</label>
+                                            <div class="thefield">
+                                                <input  type="checkbox" value="" name="inactive_farm" {{ inactive_farm }}>
+                                            </div>
+                                    </div>
+                                </div>
+                        </div>
+                            <div class="textCenter">
+                                <input type="submit" class="btn_blue" value="RUN">
+                            </div>
+                        </div>
+                        <div class="footer"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
