@@ -27,21 +27,35 @@
                             <div id="one" class="wrap ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="tabUserdata" role="tabpanel" aria-hidden="false">
                                 <div class="group bborder" style="display: block;">
                                     <div class="fieldwrapper">
-                                        <label class="styled textBeefy">Turn On Bot</label>
+                                        <label class="styled textBeefy">Main Planet</label>
                                             <div class="thefield">
-                                                <input type="checkbox" value="" name="active" {{ active }}>
+                                                <input value="{{ main_planet }}" name="main_planet">
                                             </div>
                                     </div>
                                     <div class="fieldwrapper">
-                                        <label class="styled textBeefy">Automated expeditions</label>
+                                        <label class="styled textBeefy">Automated Expeditions</label>
                                             <div class="thefield">
-                                                <input  type="checkbox" value="" name="expedition" {{ expedition }}>
+                                                <input  type="checkbox" value="checked" name="expedition" {{ expedition }}>
+                                                Large Transporters: <input  style="width: 60px;" type="number" value="{{ expedition_large_transporter }}" name="expedition_large_transporter">
                                             </div>
                                     </div>
                                     <div class="fieldwrapper">
                                         <label class="styled textBeefy">Automated Attacks to inactives</label>
                                             <div class="thefield">
-                                                <input  type="checkbox" value="" name="inactive_farm" {{ inactive_farm }}>
+                                                <input  type="checkbox" value="checked" name="inactive" {{ inactive }}>
+                                                Large Transporters: <input  style="width: 60px;" type="number" value="{{ inactive_large_transporter }}" name="inactive_large_transporter">
+                                            </div>
+                                    </div>
+                                    <div class="fieldwrapper">
+                                        <label class="styled textBeefy">Build Mines</label>
+                                            <div class="thefield">
+                                                <input  type="checkbox" value="checked" name="build_mines" {{ build_mines }}>
+                                            </div>
+                                    </div>
+                                    <div class="fieldwrapper">
+                                        <label class="styled textBeefy">Repeat Every</label>
+                                            <div class="thefield">
+                                                <input style="width: 60px;" type="number" value="{{ repeat }}" name="repeat"> min
                                             </div>
                                     </div>
                                 </div>
