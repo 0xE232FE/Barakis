@@ -1,6 +1,7 @@
 from random import randint
 from ogame.constants import *
 from time import sleep
+
 try:
     from settings import *
 except ImportError:
@@ -18,14 +19,19 @@ def expedition(empire):
 
 
 def inactive(empire):
-    while int(empire.research().computer) > len(empire.fleet()):
-        for planet in empire.galaxy(coordinates(randint(1, 6), randint(1, 499))):
+    for i in range(int(empire.research().computer)):
+        galaxy = randint(1, 6)
+        system = randint(1, 499)
+        for planet in empire.galaxy(coordinates(galaxy, system)):
             if status.inactive in planet.status:
-                empire.send_fleet(
-                    mission=mission.attack,
-                    id=empire.id_by_planet_name(bot_settings['main_planet']),
-                    where=coordinates(1, 1, planet.position),
-                    ships=[ships.large_transporter(bot_settings['expedition_large_transporter'])])
+                if empire.send_fleet(
+                        mission=mission.attack,
+                        id=empire.id_by_planet_name(bot_settings['main_planet']),
+                        where=planet.position,
+                        ships=[ships.large_transporter(int(bot_settings['inactive_large_transporter']))]):
+                    print('send Attack')
+                else:
+                    print('Failed', empire.id_by_planet_name(bot_settings['main_planet']))
 
 
 def build_mines(empire):
@@ -47,6 +53,7 @@ def build_mines(empire):
     main_resources = empire.resources(empire.id_by_planet_name(bot_settings['main_planet'])).resources
     main_ships = empire.ships(empire.id_by_planet_name(bot_settings['main_planet']))
     ids = empire.planet_ids()
+
     for id in ids:
         supply = empire.supply(id)
         local_res = empire.resources(id)

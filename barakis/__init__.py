@@ -3,13 +3,13 @@ from io import BytesIO
 from gevent.pywsgi import WSGIServer
 from threading import Thread
 from ogame import OGame
+
 try:
     from settings import *
     import bot
 except ImportError:
     from barakis.settings import *
     import barakis.bot as bot
-
 
 barakis = Flask(__name__, static_url_path='/', static_folder='/')
 
@@ -24,8 +24,9 @@ def inject_ogame(url, X_Requested_With=False):
             injected = file.read()
         response = response.text + injected
         response = response.replace(empire.index_php, 'http://{}:5000/'.format(ip_adress))
-        response = response.replace('https:\/\/s{}-{}.ogame.gameforge.com\/game\/index.php?',
-                                    'http:\/\/{}:5000/'.format(empire.server_id, empire.server_language, ip_adress))
+        js_index_php = 'https:\/\/s{}-{}.ogame.gameforge.com\/game\/index.php?'.format(empire.server_number,
+                                                                                       empire.server_language)
+        response = response.replace(js_index_php, 'http:\/\/{}:5000/'.format(ip_adress))
         response = response.replace('https://gf1.geo.gfsrv.net/', 'http://{}:5000/GEO/1/'.format(ip_adress))
         response = response.replace('https://gf2.geo.gfsrv.net/', 'http://{}:5000/GEO/2/'.format(ip_adress))
         response = response.replace('https://gf3.geo.gfsrv.net/', 'http://{}:5000/GEO/3/'.format(ip_adress))
