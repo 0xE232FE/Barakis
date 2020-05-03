@@ -26,7 +26,8 @@ In settings.py you can input permanent settings like the IP Adress if you proxy 
 
 ##### Windows
 <pre>
-If all the Setup is to hard for you you can run the Compiled Barakis_win.exe inside the barakis bin folder (auto-py-to-exe).
+Compiled with auto-py-to-exe.
+If all the Setup is to hard for you you can run the Compiled Barakis_win.exe inside the barakis bin folder 
 Settings will have no Effekt and the HTML Files need to be in the same PATH.
 </pre>
 
