@@ -24,6 +24,11 @@ python /Path/__init__.py
 In settings.py you can input permanent settings like the IP Adress if you proxy is not the same as the client.
 
 
+##### Windows
+If all the Setup is to hard for you you can run the Compiled Barakis_win.exe inside the barakis folder.
+Settings wil have no Effekt and the HTML Files need to be in the same PATH
+
+
 ### How it works
 <pre>
 The bot acts as an Proxy Service for ogame. 

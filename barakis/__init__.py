@@ -105,6 +105,6 @@ except TypeError:
     raise Exception('Bad Login')
 worker = Thread(target=bot.worker, args=(empire,))
 worker.start()
-proxy = WSGIServer(('0.0.0.0', 5000), barakis)
+proxy = WSGIServer((ip_adress, 5000), barakis)
 print('Visit: http://{}:5000'.format(ip_adress))
 proxy.serve_forever()
